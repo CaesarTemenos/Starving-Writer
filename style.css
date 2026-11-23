@@ -1,69 +1,50 @@
 /*
-  STYLE.CSS: controls how every page looks.
+  STYLE.CSS: YOUR personal settings.
+  Pages load three style files in order:
+    1. font-hack.css  (the terminal font)
+    2. theme.css      (the Terminimal theme: you won't usually touch it)
+    3. style.css      (this file: anything here overrides the theme)
+
   Each block reads: "find THESE elements { and give them THESE styles; }"
 */
 
-/* ---- YOUR COLOURS & FONTS ----
-   Change these few lines and the whole site changes.
-   (This is where the green terminal look will happen later!) */
+/* ---- YOUR COLOURS ----
+   Change these and the whole site changes.
+   Colours are written as #RRGGBB (hex) or rgb(red, green, blue). */
 :root {
-  --background: #fdfcf8;  /* page colour */
-  --text:       #2b2b2b;  /* main text colour */
-  --muted:      #8a8577;  /* dates, small text */
-  --accent:     #7a4b2a;  /* links and highlights */
-  --font:       Georgia, "Times New Roman", serif;
+  --accent: rgb(120, 226, 160);              /* the terminal green: logo, titles, arrows */
+  --accent-alpha-70: rgba(120, 226, 160, .7); /* same green, 70% see-through (dates) */
+  --accent-alpha-20: rgba(120, 226, 160, .2); /* same green, faint (highlights) */
+
+  --background: #101010;                     /* near-black page */
+  --color: #A9B7C6;                          /* main text: a soft grey-blue */
+  --border-color: rgba(255, 255, 255, .1);   /* faint dividing lines */
 }
 
-body {
-  background: var(--background);
-  color: var(--text);
-  font-family: var(--font);
-  font-size: 18px;
-  line-height: 1.7;           /* space between lines: easier to read */
-  max-width: 640px;           /* keeps lines a comfortable reading width */
-  margin: 0 auto;             /* "auto" centres the page */
-  padding: 40px 20px;
+/* ---- YOUR ADDITIONS ---- */
+
+/* The main area of each page stacks its pieces top to bottom. */
+.content {
+  flex-direction: column;
 }
 
-header {
-  border-bottom: 1px solid var(--muted);
-  margin-bottom: 40px;
-  padding-bottom: 20px;
-}
-
-h1 { margin: 0; }
-
-.tagline {                    /* a dot means "anything with class=tagline" */
-  color: var(--muted);
-  margin: 4px 0 12px;
-  font-style: italic;
-}
-
-nav a { margin-right: 16px; }
-
-a { color: var(--accent); }
-a:hover { text-decoration: none; }  /* when the mouse is over a link */
-
-.date {
-  color: var(--muted);
-  font-size: 0.85em;
-}
-
-.post-list {
-  list-style: none;           /* removes the bullet points */
-  padding: 0;
-}
-.post-list li { margin-bottom: 10px; }
-.post-list .date { margin-right: 12px; }
-
+/* Poems: keeps your line breaks AND spaces exactly as typed,
+   with a green bar down the left like a terminal margin. */
 .poem {
-  white-space: pre-line;      /* keeps your line breaks, so poems look right */
+  white-space: pre-wrap;
   font-style: italic;
-  margin: 30px 0 30px 20px;
+  border-left: 2px solid var(--accent);
+  padding-left: 20px;
+  margin: 30px 0;
 }
 
-footer {
-  margin-top: 60px;
-  color: var(--muted);
-  font-size: 0.85em;
+/* Post lists don't need the ► arrows the theme adds to normal lists. */
+.post ul.post-list-items {
+  margin-left: 0;
+}
+.post ul.post-list-items li:before {
+  content: "";
+}
+.post-list {
+  margin-bottom: 8px;
 }
