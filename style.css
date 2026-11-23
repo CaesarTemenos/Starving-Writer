@@ -1,0 +1,69 @@
+/*
+  STYLE.CSS: controls how every page looks.
+  Each block reads: "find THESE elements { and give them THESE styles; }"
+*/
+
+/* ---- YOUR COLOURS & FONTS ----
+   Change these few lines and the whole site changes.
+   (This is where the green terminal look will happen later!) */
+:root {
+  --background: #fdfcf8;  /* page colour */
+  --text:       #2b2b2b;  /* main text colour */
+  --muted:      #8a8577;  /* dates, small text */
+  --accent:     #7a4b2a;  /* links and highlights */
+  --font:       Georgia, "Times New Roman", serif;
+}
+
+body {
+  background: var(--background);
+  color: var(--text);
+  font-family: var(--font);
+  font-size: 18px;
+  line-height: 1.7;           /* space between lines: easier to read */
+  max-width: 640px;           /* keeps lines a comfortable reading width */
+  margin: 0 auto;             /* "auto" centres the page */
+  padding: 40px 20px;
+}
+
+header {
+  border-bottom: 1px solid var(--muted);
+  margin-bottom: 40px;
+  padding-bottom: 20px;
+}
+
+h1 { margin: 0; }
+
+.tagline {                    /* a dot means "anything with class=tagline" */
+  color: var(--muted);
+  margin: 4px 0 12px;
+  font-style: italic;
+}
+
+nav a { margin-right: 16px; }
+
+a { color: var(--accent); }
+a:hover { text-decoration: none; }  /* when the mouse is over a link */
+
+.date {
+  color: var(--muted);
+  font-size: 0.85em;
+}
+
+.post-list {
+  list-style: none;           /* removes the bullet points */
+  padding: 0;
+}
+.post-list li { margin-bottom: 10px; }
+.post-list .date { margin-right: 12px; }
+
+.poem {
+  white-space: pre-line;      /* keeps your line breaks, so poems look right */
+  font-style: italic;
+  margin: 30px 0 30px 20px;
+}
+
+footer {
+  margin-top: 60px;
+  color: var(--muted);
+  font-size: 0.85em;
+}
