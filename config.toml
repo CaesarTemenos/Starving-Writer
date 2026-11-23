@@ -1,0 +1,68 @@
+# ==============================================================
+#  CONFIG.TOML: your site's settings.
+#  Lines starting with # are comments (notes for you).
+#  Settings look like:   name = "value"
+# ==============================================================
+
+# The address the site will live at once it's online.
+base_url = "https://caesartemenos.github.io/Starving-Writer"
+
+# Your site's name (shown on browser tabs).
+title = "Starving Writer"
+
+# The theme in the themes/ folder.
+theme = "terminimal"
+
+# Required by the theme.
+compile_sass = true
+
+# Creates an RSS feed, so readers can follow you in a feed reader.
+generate_feeds = true
+feed_filenames = ["atom.xml"]
+
+# Lets you add tags to posts, e.g.  tags = ["poetry"]
+taxonomies = [
+    {name = "tags"}
+]
+
+[markdown]
+# Turns "quotes" into “curly quotes” and -- into an en dash.
+smart_punctuation = true
+
+[extra]
+
+# ---- COLOURS ----
+# accent_color:     blue, green, orange, pink or red
+# background_color: blue, dark, green, orange, pink, red, light or auto
+accent_color = "green"
+background_color = "dark"
+
+# ---- NAME & FOOTER ----
+# The text in the green block at the top left.
+logo_text = "Starving Writer"
+# Shown in the footer as "© <year> Starving Writer".
+author = "Starving Writer"
+
+# ---- MENU ----
+# $BASE_URL means "this website's address". Add, remove or reorder freely.
+menu_items = [
+    {name = "home",      url = "$BASE_URL"},
+    {name = "posts",     url = "$BASE_URL/posts"},
+    {name = "about",     url = "$BASE_URL/about"},
+    {name = "portfolio", url = "$BASE_URL/portfolio"},
+    {name = "contact",   url = "$BASE_URL/contact"},
+]
+
+# ---- POSTS ----
+# How many posts the home page lists under "Latest posts".
+home_latest_posts = 5
+
+# Show "previous post / next post" buttons at the bottom of each post.
+enable_post_view_navigation = true
+post_view_navigation_prompt = "Thanks for reading! Read more?"
+
+# Browser tab text: "Post title | Starving Writer".
+page_titles = "combined"
+
+# Use the full Hack font so every character (é, —, “ ”, etc.) displays properly.
+use_full_hack_font = true

@@ -1,0 +1,26 @@
+/*
+  CUSTOM.CSS: your own style tweaks. Loads after the theme, so anything here wins.
+  Colours are set in config.toml (accent_color / background_color).
+  Each block reads: "find THESE elements { and give them THESE styles; }"
+*/
+
+/* Poems: keeps your line breaks AND spaces exactly as typed,
+   with a green bar down the left like a terminal margin. */
+.poem {
+  white-space: pre-wrap;
+  font-style: italic;
+  border-left: 2px solid var(--accent);
+  padding-left: 20px;
+  margin: 30px 0;
+}
+
+/* Lists of posts: no ► arrows, a little space between entries. */
+.post ul:has(> li.post-list) {
+  margin-left: 0;
+}
+.post li.post-list:before {
+  content: "";
+}
+.post li.post-list {
+  margin-bottom: 8px;
+}

@@ -1,0 +1,18 @@
+{#
+  HOME PAGE LAYOUT. Builds on the theme's main layout ("index.html")
+  and replaces just the middle part: your welcome text, then the latest posts.
+#}
+{% extends "index.html" %}
+
+{% block content %}
+    <div class="post">
+        <h1 class="post-title">{{ section.title }}</h1>
+        {{ section.content | safe }}
+
+        <h2>Latest posts</h2>
+        {% set posts = get_section(path="posts/_index.md") %}
+        {{ post_macros::list_posts(pages=posts.pages | slice(end=config.extra.home_latest_posts)) }}
+
+        <p><a href="{{ get_url(path='@/posts/_index.md') }}">all posts &rarr;</a></p>
+    </div>
+{% endblock content %}
