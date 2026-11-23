@@ -1,0 +1,60 @@
+# ==============================================================
+#  PUBLISH: GitHub runs this automatically every time something
+#  changes on the main branch (including saves from Pages CMS).
+#  It builds the site with Zola and puts it live on GitHub Pages.
+#  You can watch each run in the repository's "Actions" tab.
+# ==============================================================
+name: Publish site
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:   # adds a "Run workflow" button in the Actions tab
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# If you save twice quickly, finish one publish before starting the next.
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+env:
+  ZOLA_VERSION: "0.19.2"
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Get the site's files
+        uses: actions/checkout@v4
+
+      - name: Install Zola
+        run: |
+          curl -sSL "https://github.com/getzola/zola/releases/download/v${ZOLA_VERSION}/zola-v${ZOLA_VERSION}-x86_64-unknown-linux-gnu.tar.gz" | tar xz
+          ./zola --version
+
+      - name: Set up GitHub Pages
+        id: pages
+        uses: actions/configure-pages@v5
+
+      - name: Build the site
+        run: ./zola build --base-url "${{ steps.pages.outputs.base_url }}"
+
+      - name: Package the site
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: public
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Publish to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
