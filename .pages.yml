@@ -1,0 +1,128 @@
+# ==============================================================
+#  .PAGES.YML: settings for Pages CMS (app.pagescms.org),
+#  the editor where you log in and write posts without touching files.
+#  It tells the editor which files to show and which boxes to give you.
+# ==============================================================
+
+content:
+
+  # ---------- POSTS ----------
+  - name: posts
+    label: Posts
+    type: collection
+    path: content/posts
+    format: toml-frontmatter
+    # New post file names come from the title, e.g. "My New Poem" -> my-new-poem.md
+    filename: "{primary}.md"
+    exclude: [_index.md]
+    view:
+      fields: [title, date, draft]
+      primary: title
+      sort: [date, title]
+      default:
+        sort: date
+        order: desc
+    fields:
+      - name: title
+        label: Title
+        type: string
+        required: true
+      - name: date
+        label: Date
+        type: date
+        required: true
+        options:
+          format: yyyy-MM-dd
+      - name: draft
+        label: Draft
+        description: Tick to keep this post hidden from the site until it's ready.
+        type: boolean
+        default: false
+      - name: taxonomies
+        label: Tags
+        type: object
+        fields:
+          - name: tags
+            label: Tags
+            description: Optional, e.g. poetry, update, short story.
+            type: string
+            list: true
+      - name: body
+        label: Text
+        type: rich-text
+      - name: extra
+        label: Poem
+        type: object
+        fields:
+          - name: poem
+            label: Poem
+            description: Optional. Paste or type a poem here. Line breaks and spaces are kept exactly as typed. It appears after the text above.
+            type: text
+
+  # ---------- HOME PAGE ----------
+  - name: home
+    label: Home page
+    type: file
+    path: content/_index.md
+    format: toml-frontmatter
+    fields:
+      - name: title
+        label: Heading
+        type: string
+      - name: template
+        type: string
+        hidden: true
+        default: home.html
+      - name: body
+        label: Welcome text
+        description: The "Latest posts" list is added underneath automatically.
+        type: rich-text
+
+  # ---------- ABOUT / PORTFOLIO / CONTACT ----------
+  - name: about
+    label: About page
+    type: file
+    path: content/pages/about.md
+    format: toml-frontmatter
+    fields:
+      - name: title
+        label: Heading
+        type: string
+      - name: path
+        type: string
+        hidden: true
+      - name: body
+        label: Text
+        type: rich-text
+
+  - name: portfolio
+    label: Portfolio page
+    type: file
+    path: content/pages/portfolio.md
+    format: toml-frontmatter
+    fields:
+      - name: title
+        label: Heading
+        type: string
+      - name: path
+        type: string
+        hidden: true
+      - name: body
+        label: Text
+        type: rich-text
+
+  - name: contact
+    label: Contact page
+    type: file
+    path: content/pages/contact.md
+    format: toml-frontmatter
+    fields:
+      - name: title
+        label: Heading
+        type: string
+      - name: path
+        type: string
+        hidden: true
+      - name: body
+        label: Text
+        type: rich-text

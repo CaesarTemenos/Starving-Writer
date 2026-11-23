@@ -3,7 +3,16 @@
 My writing, poetry and updates. Built with [Zola](https://www.getzola.org/) and the
 [Terminimal](https://github.com/pawroman/zola-theme-terminimal) theme.
 
-## Writing a new post
+## The easy way: the editor (Pages CMS)
+
+1. Go to **https://app.pagescms.org** and sign in with GitHub.
+2. Open **Starving-Writer**.
+3. Click **Posts**, then **Add an entry**. Fill in the title, date and text, and click **Save**.
+
+The editor saves your post into this repository for you. Everything below is for
+writing posts by hand instead, which also works.
+
+## Writing a new post by hand
 
 1. Open the `content/posts` folder.
 2. Create a new file ending in `.md`, e.g. `my-new-poem.md`.
@@ -52,7 +61,23 @@ Add `draft = true` under the date to keep a post hidden until it's ready.
 
 ### Tags (optional)
 
-Add `tags = ["poetry"]` under the date. Readers can then see all posts with that tag.
+Add these two lines at the END of the `+++` section (just before the closing `+++`):
+
+```
+[taxonomies]
+tags = ["poetry", "update"]
+```
+
+### A poem box (optional)
+
+Instead of the poem tags, a post can have one poem in a separate box, shown after the text.
+Add this line just before `[taxonomies]` (or before the closing `+++`):
+
+```
+extra.poem = "first line\n  second line, indented\nthird line"
+```
+
+(`\n` means "new line". The editor above handles this for you.)
 
 ## Where things live
 

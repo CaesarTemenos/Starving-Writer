@@ -1,0 +1,21 @@
+{#
+  POST / PAGE LAYOUT. Same as the theme's page.html, plus one addition:
+  if a post has a poem in the "Poem" box (extra.poem), it is shown after the text,
+  with line breaks and spaces kept exactly as typed.
+#}
+{% extends "index.html" %}
+
+{%- block title -%}
+{{ title_macros::title(page_title=page.title, main_title=config.title) }}
+{%- endblock -%}
+
+{% block content %}
+    <div class="post">
+        {{ post_macros::header(page=page) }}
+        {{ post_macros::content(page=page, summary=false, show_only_description=false) }}
+        {%- if page.extra.poem %}
+        <div class="poem">{{ page.extra.poem | trim }}</div>
+        {%- endif %}
+        {{ post_macros::earlier_later(page=page) }}
+    </div>
+{% endblock content %}

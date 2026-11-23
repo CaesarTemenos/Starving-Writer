@@ -1,8 +1,6 @@
 +++
 title = "Hello, world"
 date = 2026-11-23
-# Optional: tags help readers find similar posts. Remove the # to use them.
-# tags = ["update"]
 +++
 
 This is my first post. Prose goes in normal paragraphs like this one.
