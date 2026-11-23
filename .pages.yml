@@ -31,8 +31,10 @@ content:
         label: Date
         type: date
         required: true
+        description: Date and time. Newer posts appear at the top of the lists.
         options:
-          format: yyyy-MM-dd
+          time: true
+          format: "yyyy-MM-dd'T'HH:mm:ss"
       - name: draft
         label: Draft
         description: Tick to keep this post hidden from the site until it's ready.
@@ -44,20 +46,12 @@ content:
         fields:
           - name: tags
             label: Tags
-            description: Optional, e.g. poetry, update, short story.
+            description: Optional, e.g. update, short story.
             type: string
             list: true
       - name: body
         label: Text
         type: rich-text
-      - name: extra
-        label: Poem
-        type: object
-        fields:
-          - name: poem
-            label: Poem
-            description: Optional. Paste or type a poem here. Line breaks and spaces are kept exactly as typed. It appears after the text above.
-            type: text
 
   # ---------- HOME PAGE ----------
   - name: home

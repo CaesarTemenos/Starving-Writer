@@ -1,6 +1,6 @@
 +++
 title = "Hello, world"
-date = 2026-11-23
+date = 2026-11-23T12:00:00
 +++
 
 This is my first post. Prose goes in normal paragraphs like this one.

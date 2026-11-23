@@ -7,7 +7,7 @@ My writing, poetry and updates. Built with [Zola](https://www.getzola.org/) and 
 
 1. Go to **https://app.pagescms.org** and sign in with GitHub.
 2. Open **Starving-Writer**.
-3. Click **Posts**, then **Add an entry**. Fill in the title, date and text, and click **Save**.
+3. Click **Posts**, then **Add an entry**. Fill in the title, date/time and text, and click **Save**.
 
 The editor saves your post into this repository for you. Everything below is for
 writing posts by hand instead, which also works.
@@ -23,11 +23,14 @@ writing posts by hand instead, which also works.
    ```
    +++
    title = "My new poem"
-   date = 2026-11-30
+   date = 2026-11-30T14:30:00
    +++
 
    Your writing goes here.
    ```
+
+   The date is year-month-day, then `T`, then the time (24-hour clock).
+   Newer posts appear first.
 
 4. Save (on GitHub: **Commit changes**). The post appears on the Home and Posts
    pages automatically, newest first.
@@ -67,17 +70,6 @@ Add these two lines at the END of the `+++` section (just before the closing `++
 [taxonomies]
 tags = ["poetry", "update"]
 ```
-
-### A poem box (optional)
-
-Instead of the poem tags, a post can have one poem in a separate box, shown after the text.
-Add this line just before `[taxonomies]` (or before the closing `+++`):
-
-```
-extra.poem = "first line\n  second line, indented\nthird line"
-```
-
-(`\n` means "new line". The editor above handles this for you.)
 
 ## Where things live
 
