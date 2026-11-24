@@ -57,6 +57,9 @@ menu_items = [
 # How many posts the home page lists under "Latest posts".
 home_latest_posts = 5
 
+# How many characters of a post to show in its preview (when its Preview box is empty).
+preview_length = 250
+
 # Show "previous post / next post" buttons at the bottom of each post.
 enable_post_view_navigation = true
 post_view_navigation_prompt = "Thanks for reading! Read more?"

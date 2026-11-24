@@ -24,3 +24,22 @@
 .post li.post-list {
   margin-bottom: 8px;
 }
+
+/* Stack the page's sections top to bottom (the theme puts them side by side). */
+.content {
+  flex-direction: column;
+}
+
+/* Post previews in lists: slightly smaller titles than a full post. */
+.posts .post-title {
+  font-size: 1.3rem;
+}
+.posts .read-more {
+  margin: 0;
+}
+
+/* The "All posts" heading: no extra line under it. */
+.post.page-heading {
+  border-bottom: none;
+  padding-bottom: 0;
+}

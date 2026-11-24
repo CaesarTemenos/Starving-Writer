@@ -49,6 +49,10 @@ content:
             description: Optional, e.g. update, short story.
             type: string
             list: true
+      - name: description
+        label: Preview
+        description: Optional. A sentence or two shown in the post lists. Leave empty to use the start of the post.
+        type: text
       - name: body
         label: Text
         type: rich-text
