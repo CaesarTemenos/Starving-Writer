@@ -5,10 +5,10 @@
 # ==============================================================
 
 # The address the site will live at once it's online.
-base_url = "https://caesartemenos.github.io/Starving-Writer"
+base_url = "https://solemnvespers.com"
 
 # Your site's name (shown on browser tabs).
-title = "Starving Writer"
+title = "Solemn Vespers"
 
 # The theme in the themes/ folder.
 theme = "terminimal"
@@ -39,9 +39,9 @@ background_color = "dark"
 
 # ---- NAME & FOOTER ----
 # The text in the green block at the top left.
-logo_text = "Starving Writer"
-# Shown in the footer as "© <year> Starving Writer".
-author = "Starving Writer"
+logo_text = "Solemn Vespers"
+# Shown in the footer as "© <year> Solemn Vespers".
+author = "Solemn Vespers"
 
 # ---- MENU ----
 # $BASE_URL means "this website's address". Add, remove or reorder freely.
@@ -64,7 +64,7 @@ preview_length = 250
 enable_post_view_navigation = true
 post_view_navigation_prompt = "Thanks for reading! Read more?"
 
-# Browser tab text: "Post title | Starving Writer".
+# Browser tab text: "Post title | Solemn Vespers".
 page_titles = "combined"
 
 # Use the full Hack font so every character (é, —, “ ”, etc.) displays properly.

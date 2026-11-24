@@ -1,6 +1,6 @@
-# Starving Writer
+# Solemn Vespers
 
-My writing, poetry and updates. Built with [Zola](https://www.getzola.org/) and the
+My writing, poetry and updates, at https://solemnvespers.com. Built with [Zola](https://www.getzola.org/) and the
 [Terminimal](https://github.com/pawroman/zola-theme-terminimal) theme.
 
 ## The easy way: the editor (Pages CMS)
