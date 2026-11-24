@@ -40,8 +40,9 @@ jobs:
         id: pages
         uses: actions/configure-pages@v5
 
+      # Uses the address in config.toml (base_url), i.e. https://solemnvespers.com
       - name: Build the site
-        run: ./zola build --base-url "${{ steps.pages.outputs.base_url }}"
+        run: ./zola build
 
       - name: Package the site
         uses: actions/upload-pages-artifact@v3
