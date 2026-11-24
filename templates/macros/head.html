@@ -26,8 +26,8 @@
     <link rel="stylesheet" href="{{ get_url(path="font-hack-subset.css", trailing_slash=false) | safe }}">
 {% endif -%}
 
-    {#- ADDED: loads your own stylesheet (static/custom.css) after the theme. #}
-    <link rel="stylesheet" href="{{ get_url(path="custom.css", trailing_slash=false) | safe }}">
+    {#- ADDED: loads your own stylesheet (static/custom.css) after the theme. cachebust adds a code that changes whenever the file does, so browsers fetch the new version straight away. #}
+    <link rel="stylesheet" href="{{ get_url(path="custom.css", trailing_slash=false, cachebust=true) | safe }}">
 {% endmacro head %}
 
 
