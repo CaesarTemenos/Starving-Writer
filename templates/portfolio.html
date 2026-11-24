@@ -1,0 +1,28 @@
+{#
+  PORTFOLIO PAGE LAYOUT: the title, your intro, then every piece listed as
+    TYPE — date — Title
+  (with its Preview text underneath, if it has one), newest first.
+#}
+{% extends "base.html" %}
+
+{% block content %}
+<h1>{{ section.title }}</h1>
+{{ section.content | safe }}
+
+<ul class="portfolio-list">
+{% for piece in section.pages %}
+  <li>
+    <a href="{{ piece.permalink | safe }}">
+      {%- if piece.extra.category %}<span class="piece-type">{{ piece.extra.category }}</span><span class="sep"> — </span>{% endif -%}
+      <time datetime="{{ piece.date }}">{{ piece.date | date(format='%d %b %Y') }}</time><span class="sep"> — </span>
+      <span class="piece-title">{{ piece.title }}</span>
+    </a>
+    {%- if piece.description %}
+    <p class="piece-desc">{{ piece.description }}</p>
+    {%- endif %}
+  </li>
+{% else %}
+  <li class="empty">Nothing here yet.</li>
+{% endfor %}
+</ul>
+{% endblock content %}

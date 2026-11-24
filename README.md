@@ -12,6 +12,13 @@ My writing, poetry and updates, at https://solemnvespers.com. Built with [Zola](
 The editor saves your post into this repository for you. Everything below is for
 writing posts by hand instead, which also works.
 
+### Adding to the portfolio
+
+In the editor, click **Portfolio**, then **Add an entry**. Choose a **Type** (Poetry, Short Story,
+etc.); it shows in the list as **POETRY — 24 Nov 2026 — Title**. The Portfolio page's intro
+text is under **Portfolio intro**. (To change the list of types, edit the `values` line under
+`category` in `.pages.yml`.)
+
 ## Writing a new post by hand
 
 1. Open the `content/posts` folder.
@@ -86,7 +93,8 @@ tags = ["poetry", "update"]
 |---|---|
 | Posts | `content/posts/` |
 | Home page welcome text | `content/_index.md` |
-| About, Portfolio, Contact | `content/pages/` |
+| Portfolio pieces (and the intro, in `_index.md`) | `content/portfolio/` |
+| About, Contact | `content/pages/` |
 | Name, tagline, colours, menu, profile picture setting | `config.toml` |
 | Profile picture file | `static/images/profile.png` |
 | Your style tweaks (poem style, post previews) | `static/custom.css` |

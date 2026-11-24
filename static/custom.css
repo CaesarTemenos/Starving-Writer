@@ -67,3 +67,44 @@ img.profile-pic {
   font-style: italic;
   opacity: .7;
 }
+
+/* ---- Portfolio list: TYPE — date — Title ---- */
+.portfolio-list {
+  list-style: none;
+  padding: 0;
+  margin: 2rem 0 1.5rem;
+}
+.portfolio-list li {
+  padding: .9rem 0;
+  border-bottom: 1px solid #2a2a29;
+}
+.portfolio-list li:last-child {
+  border-bottom: none;
+}
+.portfolio-list a {
+  text-decoration: none !important;
+}
+.portfolio-list a:hover .piece-title {
+  text-decoration: underline;
+}
+.portfolio-list time,
+.portfolio-list .sep {
+  color: #a0a0a0;
+}
+.portfolio-list .piece-title {
+  font-weight: 600;
+}
+.piece-type {
+  text-transform: uppercase;
+  letter-spacing: .08em;
+  font-size: .85em;
+}
+.piece-desc {
+  text-align: left;
+  margin: .35rem 0 0;
+  font-size: .95rem;
+}
+.piece-type-on-page {
+  color: var(--accent) !important;
+  margin-top: -.75rem;
+}
