@@ -4,71 +4,101 @@
 #  Settings look like:   name = "value"
 # ==============================================================
 
-# The address the site will live at once it's online.
+# The address the site lives at.
 base_url = "https://solemnvespers.com"
 
-# Your site's name (shown on browser tabs).
+# Your site's name (top left of every page, and on browser tabs).
 title = "Solemn Vespers"
 
+# A one-line description, used by search engines and link previews.
+description = "The writing and portfolio of Seamus Caesar."
+
 # The theme in the themes/ folder.
-theme = "terminimal"
+theme = "austere"
 
-# Required by the theme.
-compile_sass = true
+# The theme keeps its styles inside its templates, so no Sass is needed.
+compile_sass = false
 
-# Creates an RSS feed, so readers can follow you in a feed reader.
+default_language = "en"
+
+# Creates feeds, so readers can follow you in a feed reader.
 generate_feeds = true
-feed_filenames = ["atom.xml"]
+feed_filenames = ["atom.xml", "rss.xml"]
 
-# Lets you add tags to posts, e.g.  tags = ["poetry"]
-taxonomies = [
-    {name = "tags"}
-]
+# Lets you add tags to posts.
+taxonomies = [{ name = "tags", feed = true }]
 
 [markdown]
 # Turns "quotes" into “curly quotes” and -- into an en dash.
 smart_punctuation = true
 
+[slugify]
+paths = "on"
+taxonomies = "on"
+anchors = "on"
+
 [extra]
 
-# ---- COLOURS ----
-# accent_color:     blue, green, orange, pink or red
-# background_color: blue, dark, green, orange, pink, red, light or auto
-accent_color = "green"
-background_color = "dark"
+# ---- HEADER ----
+# The line shown next to the site name (hidden on narrow phone screens).
+strapline = "The writing and portfolio of Seamus Caesar."
+# The small icon left of the site name. "quill.svg" is the theme's quill.
+# Put a # in front of this line to hide the icon.
+site_icon = "quill.svg"
 
-# ---- NAME & FOOTER ----
-# The text in the green block at the top left.
-logo_text = "Solemn Vespers"
-# The line under the site name, on every page. Leave the quotes empty ("") to hide it.
-tagline = "The writing and portfolio of Seamus Caesar."
-
-# Shown in the footer as "© <year> Solemn Vespers".
-author = "Solemn Vespers"
-
-# ---- MENU ----
-# $BASE_URL means "this website's address". Add, remove or reorder freely.
-menu_items = [
-    {name = "home",      url = "$BASE_URL"},
-    {name = "posts",     url = "$BASE_URL/posts"},
-    {name = "about",     url = "$BASE_URL/about"},
-    {name = "portfolio", url = "$BASE_URL/portfolio"},
-    {name = "contact",   url = "$BASE_URL/contact"},
-]
-
-# ---- POSTS ----
-# How many posts the home page lists under "Latest posts".
+# ---- HOME PAGE ----
+# The round picture at the top of the home page (file is in static/images/).
+profile_picture = "/images/profile.png"
+# How many posts the home page previews under "Latest posts".
 home_latest_posts = 5
-
 # How many characters of a post to show in its preview (when its Preview box is empty).
 preview_length = 250
 
-# Show "previous post / next post" buttons at the bottom of each post.
-enable_post_view_navigation = true
-post_view_navigation_prompt = "Thanks for reading! Read more?"
+# ---- FOOTER ----
+footer_text = "© 2026 Solemn Vespers · Theme: <a href='https://github.com/tomwrw/austere-theme-zola'>austere</a>"
 
-# Browser tab text: "Post title | Solemn Vespers".
-page_titles = "combined"
+# ---- BROWSER ICON ----
+favicon = "/favicon.ico"
 
-# Use the full Hack font so every character (é, —, “ ”, etc.) displays properly.
-use_full_hack_font = true
+# ---- MENU ----
+# $BASE_URL means "this website's address". Add, remove or reorder freely.
+menu_links = [
+  { url = "$BASE_URL/", name = "Home" },
+  { url = "$BASE_URL/posts/", name = "Posts" },
+  { url = "$BASE_URL/about/", name = "About" },
+  { url = "$BASE_URL/portfolio/", name = "Portfolio" },
+  { url = "$BASE_URL/contact/", name = "Contact" },
+]
+
+# ---- ICONS ----
+inline_icons = true
+icon_path = "themes/austere/static/icons/"
+icons = ["light", "asleep", "rss"]
+
+# ---- IMAGES IN POSTS ----
+image_format = "auto"
+image_quality = 80
+images_default_size = 1024
+images_sizes = [512, 1024, 2048]
+
+# ---- COLOURS ----
+# The site is always shown in the dark colours below (see templates/base.html).
+# Colours are written as #RRGGBB.
+[extra.colours.dark]
+background = "#141413"    # page background
+text = "#e8e8e8"          # main text
+text_muted = "#a0a0a0"    # paragraphs, dates
+accent = "#E07A5F"        # links, site name, highlights
+accent_hover = "#F4A594"  # links when the mouse is over them
+code_bg = "#1e1e1d"
+border = "#2a2a29"        # dividing lines
+
+# (Light colours, only used if you ever turn the light/dark switch back on.)
+[extra.colours.light]
+background = "#FAF7F2"
+text = "#1a1a1a"
+text_muted = "#3a3a3a"
+accent = "#9E4440"
+accent_hover = "#7A3533"
+code_bg = "#f0ebe3"
+border = "#e0d9ce"

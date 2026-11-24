@@ -1,0 +1,23 @@
+{#
+  SITE-WIDE LAYOUT. Builds on the austere theme's own layout and adds:
+   1. Dark mode always (the theme would otherwise follow the visitor's device),
+      and hides the light/dark switch.
+   2. Loads your own stylesheet, static/custom.css.
+  Every other page builds on this one.
+#}
+{% extends "austere/templates/base.html" %}
+
+{% block head_extra %}
+<script>
+  /* Always dark. To bring back the light/dark switch, delete this script
+     and the ".theme" rule in static/custom.css. */
+  (function () {
+    var h = document.documentElement;
+    h.className = 'dark';
+    window.T = function () {};
+    var c = document.getElementById('tc');
+    if (c) c.content = getComputedStyle(h).getPropertyValue('--tc');
+  })();
+</script>
+<link rel="stylesheet" href="{{ get_url(path='custom.css', trailing_slash=false, cachebust=true) | safe }}">
+{% endblock head_extra %}

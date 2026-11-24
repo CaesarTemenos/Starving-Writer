@@ -1,0 +1,22 @@
+{#
+  POST PREVIEW: one entry in a post list, shown as:
+    Title
+    date
+    a few sentences of the post
+    View →
+  The "few sentences" come from the post's Preview box (description) if filled in,
+  otherwise from the start of the post itself. Line breaks in poems show as " / ",
+  and stanza breaks as " // ", the usual way of quoting poetry in a sentence.
+#}
+{% component post_preview(page, @config) %}
+<article class="preview">
+  <h2><a href="{{ page.permalink | safe }}">{{ page.title }}</a></h2>
+  <time class="s" datetime="{{ page.date }}">{{ page.date | date(format='%d %b %Y') }}</time>
+  {%- if page.description %}
+  <p>{{ page.description }}</p>
+  {%- else %}
+  <p>{{ page.content | replace(from="<br><br>", to=" // ") | replace(from="<br>", to=" / ") | replace(from="<br />\n", to=" / ") | replace(from="<br />", to=" / ") | striptags | trim | truncate(length=config.extra.preview_length) | safe }}</p>
+  {%- endif %}
+  <a class="view" href="{{ page.permalink | safe }}">View &rarr;</a>
+</article>
+{% endcomponent post_preview %}

@@ -1,7 +1,7 @@
 # Solemn Vespers
 
 My writing, poetry and updates, at https://solemnvespers.com. Built with [Zola](https://www.getzola.org/) and the
-[Terminimal](https://github.com/pawroman/zola-theme-terminimal) theme.
+[austere](https://github.com/tomwrw/austere-theme-zola) theme.
 
 ## The easy way: the editor (Pages CMS)
 
@@ -48,15 +48,24 @@ writing posts by hand instead, which also works.
 
 ### Poems
 
-Wrap a poem in the poem tags. Line breaks and spaces are kept exactly as typed:
+**In the editor:** type the poem in the Text box. Press **Shift+Enter** for a new line
+within a stanza, and **Enter** for a new stanza. (Indents at the start of a line are lost.)
+
+**By hand, to keep indents too:** wrap the poem in the poem tags. Line breaks, blank
+lines and spaces are kept exactly as typed:
 
 ```
-{% poem() %}
+{% <poem> %}
 the cursor blinks,
   patient as a lighthouse,
 waiting for the first word.
-{% end %}
+{% </poem> %}
 ```
+
+### Avoid `{{` and `{%` in your writing
+
+Zola reads those as instructions, so a post containing them won't build.
+(If you ever need them, ask Claude.)
 
 ### Drafts
 
@@ -78,12 +87,13 @@ tags = ["poetry", "update"]
 | Posts | `content/posts/` |
 | Home page welcome text | `content/_index.md` |
 | About, Portfolio, Contact | `content/pages/` |
-| Name, colours, menu | `config.toml` |
-| Your style tweaks (e.g. the poem style) | `static/custom.css` |
-| Home and Posts page layouts | `templates/` |
-| The Terminimal theme (no need to edit) | `themes/terminimal/` |
+| Name, tagline, colours, menu, profile picture setting | `config.toml` |
+| Profile picture file | `static/images/profile.png` |
+| Your style tweaks (poem style, post previews) | `static/custom.css` |
+| Home and Posts page layouts, post previews, poem tags | `templates/` |
+| The austere theme (no need to edit) | `themes/austere/` |
 
 ## Credits
 
-Terminimal theme by pawroman and panr, MIT License (`themes/terminimal/LICENSE.md`).
-Hack font, MIT License (`themes/terminimal/LICENSE-Hack.md`).
+austere theme by tomwrw, MIT License (see `themes/austere/README.md`).
+Source Serif 4 font, via Google Fonts.

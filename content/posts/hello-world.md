@@ -10,8 +10,8 @@ You can write *italics* with single stars and **bold** with double stars.
 
 For poetry, wrap the poem in the poem tags below. Line breaks and spaces are kept exactly as typed:
 
-{% poem() %}
+{% <poem> %}
 the cursor blinks,
   patient as a lighthouse,
 waiting for the first word.
-{% end %}
+{% </poem> %}

@@ -1,0 +1,10 @@
+{#
+  POEM: keeps your line breaks and spaces exactly as typed. Use it in a post like this:
+    {% <poem> %}
+    your lines
+      go here
+    {% </poem> %}
+#}
+{#- The poem is turned into one line with <br> line breaks, so blank lines between
+    stanzas don't break it apart. Spaces are kept by "white-space: pre-wrap" in custom.css. -#}
+{% component poem() %}<div class="poem">{{ body | trim | escape | replace(from="\r", to="") | replace(from="\n", to="<br>") | safe }}</div>{% endcomponent poem %}

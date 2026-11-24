@@ -1,21 +1,12 @@
 {#
   POSTS PAGE LAYOUT: the title, then a preview of every post, newest first.
 #}
-{% extends "index.html" %}
-{% import "macros/preview.html" as preview %}
-
-{%- block title -%}
-{{ title_macros::title(page_title=section.title, main_title=config.title) }}
-{%- endblock -%}
+{% extends "base.html" %}
 
 {% block content %}
-    <div class="post page-heading">
-        <h1 class="post-title">{{ section.title }}</h1>
-    </div>
-
-    <div class="posts">
-        {%- for page in section.pages %}
-            {{ preview::post_preview(page=page) }}
-        {%- endfor %}
-    </div>
+<h1>{{ section.title }}</h1>
+{{ section.content | safe }}
+{% for post in section.pages %}
+{{ <post_preview page={post}/> }}
+{% endfor %}
 {% endblock content %}
