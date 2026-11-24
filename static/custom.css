@@ -34,8 +34,15 @@
 .posts .post-title {
   font-size: 1.3rem;
 }
-.posts .read-more {
+/* The View button: same spacing whether or not the mouse is over it
+   (the theme adds space on hover, which made the button jump). */
+.posts a.read-more,
+.posts a.read-more:hover,
+.posts a.read-more:active {
   margin: 0;
+}
+.posts a.read-more:hover {
+  color: var(--accent);
 }
 
 /* The "All posts" heading: no extra line under it. */
