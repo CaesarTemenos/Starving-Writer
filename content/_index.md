@@ -1,9 +1,8 @@
 +++
 # HOME PAGE. The text below the +++ lines is your welcome message.
 # The "Latest posts" list is added underneath automatically.
-title = "Hello"
+title = "Welcome"
 template = "home.html"
 +++
 
-Welcome to my corner of the internet. This is where I post my writing,
-poetry, and updates on what I'm working on.
+This site acts as both a blog and portfolio for Seamus Caesar. I mainly write poetry, however I am attempting a venture into fiction. Enjoy your visit, or don't.

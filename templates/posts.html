@@ -8,5 +8,7 @@
 {{ section.content | safe }}
 {% for post in section.pages %}
 {{ <post_preview page={post}/> }}
+{% else %}
+<p class="empty">Nothing posted yet.</p>
 {% endfor %}
 {% endblock content %}
