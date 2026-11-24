@@ -50,3 +50,10 @@
   border-bottom: none;
   padding-bottom: 0;
 }
+
+/* The tagline under the site name. */
+.tagline {
+  margin: 15px 0 0;
+  font-style: italic;
+  opacity: 0.7;
+}

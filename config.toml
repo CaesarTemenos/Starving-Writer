@@ -40,6 +40,9 @@ background_color = "dark"
 # ---- NAME & FOOTER ----
 # The text in the green block at the top left.
 logo_text = "Solemn Vespers"
+# The line under the site name, on every page. Leave the quotes empty ("") to hide it.
+tagline = "The writing and portfolio of Seamus Caesar."
+
 # Shown in the footer as "© <year> Solemn Vespers".
 author = "Solemn Vespers"
 
